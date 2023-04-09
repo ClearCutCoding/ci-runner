@@ -80,12 +80,12 @@ function fnc_fix_phpcs()
       return
     fi
 
-    if [[ ${VAR_PHPCSFIXER} == "no" ]]; then
+    if [[ ${VAR_PHPCSFIXER} != "yes" ]]; then
       echo -e "\n${COL_RED}BYPASS PHP-CS-FIXER${COL_NC}\n"
       return
     fi
 
-   echo -e "\n${COL_GREEN}START PHP-CS-FIXER${COL_NC}\n"
+    echo -e "\n${COL_GREEN}START PHP-CS-FIXER${COL_NC}\n"
 
     (PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix)
 
@@ -96,7 +96,7 @@ function fnc_fix_phpcs()
 
 function fnc_lint_yaml()
 {
-    if [[ ${VAR_LINTYAML} == "no" ]]; then
+    if [[ ${VAR_LINTYAML} != "yes" ]]; then
       echo -e "\n${COL_RED}BYPASS YAML LINT${COL_NC}\n"
       return
     fi
@@ -113,7 +113,7 @@ function fnc_lint_yaml()
 
 function fnc_lint_twig()
 {
-    if [[ ${VAR_LINTTWIG} == "no" ]]; then
+    if [[ ${VAR_LINTTWIG} != "yes" ]]; then
       echo -e "\n${COL_RED}BYPASS TWIG LINT${COL_NC}\n"
       return
     fi
@@ -129,7 +129,7 @@ function fnc_lint_twig()
 
 function fnc_phpunit()
 {
-    if [[ ${VAR_PHPUNIT} == "no" ]]; then
+    if [[ ${VAR_PHPUNIT} != "yes" ]]; then
       echo -e "\n${COL_RED}BYPASS PHPUNIT${COL_NC}\n"
       return
     fi
@@ -145,7 +145,7 @@ function fnc_phpunit()
 
 function fnc_phpcs()
 {
-    if [[ ${VAR_PHPCS} == "no" ]]; then
+    if [[ ${VAR_PHPCS} != "yes" ]]; then
       echo -e "\n${COL_RED}BYPASS PHPCS${COL_NC}\n"
       return
     fi
@@ -161,7 +161,7 @@ function fnc_phpcs()
 
 function fnc_psalm()
 {
-    if [[ ${VAR_PSALM} == "no" ]]; then
+    if [[ ${VAR_PSALM} != "yes" ]]; then
       echo -e "\n${COL_RED}BYPASS PSALM${COL_NC}\n"
       return
     fi
@@ -177,7 +177,7 @@ function fnc_psalm()
 
 function fnc_phpmd()
 {
-    if [[ ${VAR_PHPMD} == "no" ]]; then
+    if [[ ${VAR_PHPMD} != "yes" ]]; then
       echo -e "\n${COL_RED}BYPASS PHPMD${COL_NC}\n"
       return
     fi
@@ -193,7 +193,7 @@ function fnc_phpmd()
 
 function fnc_phpstan()
 {
-    if [[ ${VAR_PHPSTAN} == "no" ]]; then
+    if [[ ${VAR_PHPSTAN} != "yes" ]]; then
       echo -e "\n${COL_RED}BYPASS PHPSTAN${COL_NC}\n"
       return
     fi
