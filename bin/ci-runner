@@ -1,0 +1,16 @@
+#!/usr/bin/env php
+<?php
+
+use ClearCutCoding\SymfonyCiRunner\ConfigLoader;
+use ClearCutCoding\SymfonyCiRunner\Runner;
+
+if (file_exists(__DIR__ . '/../../../../autoload.php')) {
+    // part of a composer installation
+    require_once __DIR__ . '/../../../autoload.php';
+} else {
+    require_once __DIR__ . '/../vendor/autoload.php';
+}
+
+$runner = new Runner(new ConfigLoader());
+
+$runner->run($argv);
