@@ -20,5 +20,11 @@ phpstan: true
 psalm: true
 ```
 
+### Dev
+
 - Run `vendor/bin/ci-runner` from inside the project root directory
+
+### Build
+
+- Run `vendor/bin/ci-runner --no-mods` to ensure no file-changing processes will run.
 
