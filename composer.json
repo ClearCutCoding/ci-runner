@@ -17,9 +17,7 @@
     "bin": ["bin/ci-runner"],
     "require": {
         "php": ">=8.0",
-        "symfony/yaml": "^6.2"
-    },
-    "require-dev": {
+        "symfony/yaml": "^6.2",
         "friendsofphp/php-cs-fixer": "^3.16",
         "phpmd/phpmd": "^2.13",
         "phpstan/phpstan": "^1.10",
@@ -27,5 +25,7 @@
         "squizlabs/php_codesniffer": "^3.7",
         "symfony/phpunit-bridge": "^6.2",
         "vimeo/psalm": "^5.9"
+    },
+    "require-dev": {
     }
 }
