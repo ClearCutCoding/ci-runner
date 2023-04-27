@@ -71,7 +71,7 @@ final class Runner
         }
 
         $cmd = 'PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix';
-        shell_exec($cmd);
+        echo shell_exec($cmd);
 
         $this->end($title);
     }
@@ -84,9 +84,9 @@ final class Runner
         }
 
         $cmd = 'bin/console lint:yaml config';
-        shell_exec($cmd);
+        echo shell_exec($cmd);
         $cmd = 'bin/console lint:yaml src';
-        shell_exec($cmd);
+        echo shell_exec($cmd);
 
         $this->end($title);
     }
@@ -99,7 +99,7 @@ final class Runner
         }
 
         $cmd = 'bin/console lint:twig src';
-        shell_exec($cmd);
+        echo shell_exec($cmd);
 
         $this->end($title);
     }
@@ -112,7 +112,7 @@ final class Runner
         }
 
         $cmd = 'vendor/bin/phpcs --report=checkstyle --extensions=php src tests';
-        shell_exec($cmd);
+        echo shell_exec($cmd);
 
         $this->end($title);
     }
@@ -125,7 +125,7 @@ final class Runner
         }
 
         $cmd = 'bin/phpunit --configuration phpunit.xml.dist';
-        shell_exec($cmd);
+        echo shell_exec($cmd);
 
         $this->end($title);
     }
@@ -138,7 +138,7 @@ final class Runner
         }
 
         $cmd = 'vendor/bin/phpmd src,tests text controversial,unusedcode';
-        shell_exec($cmd);
+        echo shell_exec($cmd);
 
         $this->end($title);
     }
@@ -151,7 +151,7 @@ final class Runner
         }
 
         $cmd = 'php -d memory_limit=-1 vendor/bin/phpstan analyse src tests';
-        shell_exec($cmd);
+        echo shell_exec($cmd);
 
         $this->end($title);
     }
@@ -164,7 +164,7 @@ final class Runner
         }
 
         $cmd = 'vendor/bin/psalm --show-info=true';
-        shell_exec($cmd);
+        echo shell_exec($cmd);
 
         $this->end($title);
     }
