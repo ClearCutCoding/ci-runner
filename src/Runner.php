@@ -184,7 +184,7 @@ final class Runner
             return true;
         }
 
-        $cmd = 'php -d memory_limit=-1 vendor/bin/phpstan analyse src tests';
+        $cmd = "php -d memory_limit=-1 {$this->vendorRoot}/vendor/bin/phpstan analyse src tests";
         exec($cmd, $output, $exitCode);
 
         return $this->end($title, $output, $exitCode);
