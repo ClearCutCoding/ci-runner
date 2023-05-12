@@ -158,7 +158,7 @@ final class Runner
             return true;
         }
 
-        $cmd = 'bin/phpunit --configuration phpunit.xml.dist';
+        $cmd = "{$this->vendorRoot}vendor/bin/phpunit --configuration phpunit.xml.dist";
         exec($cmd, $output, $exitCode);
 
         return $this->end($title, $output, $exitCode);
