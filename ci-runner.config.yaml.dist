@@ -1,8 +1,11 @@
-phpcsfixer: true
-lintyaml: true
-linttwig: true
-phpcs: true
-phpunit: true
-phpmd: true
-phpstan: true
-psalm: true
+vendor-root: ./
+run:
+  rector: true
+  phpcsfixer: true
+  lintyaml: true
+  linttwig: true
+  phpcs: true
+  phpunit: true
+  phpmd: true
+  phpstan: true
+  psalm: true
