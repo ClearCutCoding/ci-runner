@@ -62,7 +62,7 @@ final class Runner
         echo "\n" . self::COL_GREEN . "END {$title}" . self::COL_NC . "\n";
 
         if ($exitCode !== 0) {
-            exit;
+            exit($exitCode);
         }
 
         return true;
