@@ -7,7 +7,7 @@ use Symfony\Component\Yaml\Yaml;
 
 final class ConfigLoader
 {
-    private const CONFIG_FILE = 'ci-runner.config.yaml';
+    private const string CONFIG_FILE = 'ci-runner.config.yaml';
 
     public function __construct()
     {

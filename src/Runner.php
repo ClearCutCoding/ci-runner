@@ -10,11 +10,11 @@ final class Runner
     private bool $noModsRun = false;
 
     // TERMINAL COLORS
-    private const COL_RED = "\033[1;31m";
-    private const COL_YELLOW = "\033[1;33m";
-    private const COL_GREEN = "\033[0;32m";
-    private const COL_BLUE = "\033[0;34m";
-    private const COL_NC = "\033[0m"; // No Color
+    private const string COL_RED = "\033[1;31m";
+    private const string COL_YELLOW = "\033[1;33m";
+    private const string COL_GREEN = "\033[0;32m";
+    private const string COL_BLUE = "\033[0;34m";
+    private const string COL_NC = "\033[0m"; // No Color
 
     private readonly array $config;
 
