@@ -108,31 +108,27 @@ final class Runner
         return $this->end($title, $output, $exitCode);
     }
 
-    private function lintyaml(bool $do): bool
+    private function lintyaml(mixed $do): bool
     {
         $title = 'YAML LINT';
         if (!$this->begin($do, $title)) {
             return true;
         }
 
-        $cmd = 'bin/console lint:yaml config';
-        exec($cmd, $output, $exitCode);
-        echo implode(PHP_EOL, $output);
-
-        $cmd = 'bin/console lint:yaml src';
+        $cmd = 'bin/console lint:yaml {$do}';
         exec($cmd, $output, $exitCode);
 
         return $this->end($title, $output, $exitCode);
     }
 
-    private function linttwig(bool $do): bool
+    private function linttwig(mixed $do): bool
     {
         $title = 'TWIG LINT';
         if (!$this->begin($do, $title)) {
             return true;
         }
 
-        $cmd = 'bin/console lint:twig src';
+        $cmd = 'bin/console lint:twig {$do}';
         exec($cmd, $output, $exitCode);
 
         return $this->end($title, $output, $exitCode);
@@ -145,7 +141,7 @@ final class Runner
             return true;
         }
 
-        $cmd = "{$this->vendorRoot}vendor/bin/phpcs --report=checkstyle --extensions=php src tests";
+        $cmd = "{$this->vendorRoot}vendor/bin/phpcs --report=checkstyle --extensions=php";
         exec($cmd, $output, $exitCode);
 
         return $this->end($title, $output, $exitCode);
@@ -158,20 +154,20 @@ final class Runner
             return true;
         }
 
-        $cmd = "{$this->vendorRoot}vendor/bin/phpunit --configuration phpunit.xml.dist";
+        $cmd = "{$this->vendorRoot}vendor/bin/phpunit --configuration phpunit.xml";
         exec($cmd, $output, $exitCode);
 
         return $this->end($title, $output, $exitCode);
     }
 
-    private function phpmd(bool $do): bool
+    private function phpmd(mixed $do): bool
     {
         $title = 'PHPMD';
         if (!$this->begin($do, $title)) {
             return true;
         }
 
-        $cmd = "{$this->vendorRoot}vendor/bin/phpmd src,tests text controversial,unusedcode";
+        $cmd = "{$this->vendorRoot}vendor/bin/phpmd {$do} text controversial,unusedcode";
         exec($cmd, $output, $exitCode);
 
         return $this->end($title, $output, $exitCode);
@@ -184,7 +180,7 @@ final class Runner
             return true;
         }
 
-        $cmd = "php -d memory_limit=-1 {$this->vendorRoot}/vendor/bin/phpstan analyse src tests";
+        $cmd = "php -d memory_limit=-1 {$this->vendorRoot}/vendor/bin/phpstan analyse -c phpstan.neon";
         exec($cmd, $output, $exitCode);
 
         return $this->end($title, $output, $exitCode);
