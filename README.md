@@ -24,7 +24,7 @@ psalm: true [true | false]
 The following need to have config files created:
 
 ```
-rectod -> rector.php
+rector -> rector.php
 phpcsfixer -> .php-cs-fixer.php
 phpcs -> phpcs.xml
 phpunit -> phpunit.xml
