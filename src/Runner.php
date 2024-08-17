@@ -115,7 +115,7 @@ final class Runner
             return true;
         }
 
-        $cmd = 'bin/console lint:yaml {$do}';
+        $cmd = "bin/console lint:yaml {$do}";
         exec($cmd, $output, $exitCode);
 
         return $this->end($title, $output, $exitCode);
@@ -128,7 +128,7 @@ final class Runner
             return true;
         }
 
-        $cmd = 'bin/console lint:twig {$do}';
+        $cmd = "bin/console lint:twig {$do}";
         exec($cmd, $output, $exitCode);
 
         return $this->end($title, $output, $exitCode);
